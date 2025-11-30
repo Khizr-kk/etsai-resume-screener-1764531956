@@ -1,0 +1,92 @@
+# Roadmap
+
+## Week 1
+- Setup core project structure (frontend, backend, database).
+- Implement basic user registration and login forms (no email verification).
+- Create a user profile page to display basic info.
+- Develop a simple page for resume upload (PDF/DOCX) and storage on the server.
+- Create a text area for Job Description (JD) input.
+- Implement a very basic "AI" analysis: simple keyword extraction from resume and JD.
+- Display a rudimentary "fit score" based on direct keyword overlap.
+- Show basic "keywords to add" suggestions.
+- Build a minimalistic dashboard to view the last analysis result.
+- Deploy a clickable demo to a staging environment.
+
+## Weeks 2-4
+- **User Authentication & Profile**:
+    - Implement secure password hashing and session management.
+    - Add email verification for user registration.
+    - Allow users to update profile information (name, email).
+    - Implement password reset functionality.
+- **Resume Management (Upload, Storage, Parsing)**:
+    - Enhance resume upload: client-side validation, secure cloud storage (e.g., AWS S3).
+    - Develop robust text extraction from PDF/DOCX using a dedicated library (e.g., `python-docx`, `pdfminer.six`).
+    - Store parsed text content alongside original file metadata in the database.
+- **Job Description Management**:
+    - Allow users to save multiple JDs to their profile.
+    - Implement basic JD editing and deletion functionalities.
+- **AI Analysis Engine (Skill Gap, Fit Score, Suggestions)**:
+    - **Skill Gap Analysis**:
+        - Refine keyword extraction from both resume and JD using more sophisticated NLP libraries (e.g., spaCy, NLTK) for tokenization, lemmatization.
+        - Develop a skill categorization/matching logic beyond exact keyword match.
+        - *ML Note*: Initial rule-based NLP for tokenization, lemmatization, and basic entity/skill extraction.
+    - **Resume-Job Fit Score**:
+        - Implement a scoring algorithm incorporating weighted keyword matches, skill relevance, and experience indicators.
+        - *ML Note*: Develop a scoring model, possibly using TF-IDF or similar vectorization for more nuanced matching of skills.
+    - **Tailoring Suggestions**:
+        - Generate more intelligent suggestions for keywords/phrases to add/emphasize based on identified skill gaps and JD requirements.
+        - Prioritize suggestions based on their potential impact on the fit score.
+        - *ML Note*: Leverage keyword importance (e.g., IDF) to suggest impactful terms and phrases.
+- **Reporting & Dashboard**:
+    - Design and build a comprehensive dashboard displaying all past analyses.
+    - Show detailed analysis results for each entry: breakdown of skill match, missing skills, suggested additions.
+    - Implement basic filtering and sorting of analysis history.
+- **Subscription & Payment Gateway**:
+    - Integrate with a basic payment provider (e.g., Stripe Checkout) for a single premium tier.
+    - Implement logic to differentiate between free and premium features (e.g., limited number of analyses for free users).
+- **Notification System**:
+    - Implement basic in-app notifications (e.g., "Analysis Complete," "Subscription Expiring").
+
+## Month 2-3
+- **Infrastructure & Stability**:
+    - Set up production-grade hosting (AWS/GCP/Azure) with load balancing.
+    - Implement CI/CD pipeline for automated testing and deployments.
+    - Configure robust logging, monitoring, and error tracking (e.g., Sentry, Prometheus/Grafana).
+    - Implement automated database backups and recovery procedures.
+    - Optimize database queries and introduce caching for frequently accessed data.
+    - Ensure scalability for AI analysis engine (e.g., message queues for asynchronous processing jobs).
+- **Security Hardening**:
+    - Conduct security audits for common vulnerabilities (OWASP Top 10).
+    - Implement multi-factor authentication (MFA) for users.
+    - Encrypt sensitive data at rest and in transit (SSL/TLS).
+    - Enhance access control and role-based permissions.
+- **Polishing & User Experience (UX)**:
+    - Refine UI/UX for a seamless and intuitive user journey across all features.
+    - Improve error messages and provide helpful user feedback.
+    - Optimize page load times and responsiveness across devices.
+    - Conduct user acceptance testing (UAT) with target users.
+- **Analytics & Feedback**:
+    - Integrate analytics tools (e.g., Google Analytics, Mixpanel) to track user engagement, feature usage, and conversion funnels.
+    - Implement an in-app feedback mechanism.
+- **Subscription & Payment Gateway**:
+    - Implement full subscription lifecycle management (upgrades, downgrades, cancellations).
+    - Set up invoicing and billing history for users.
+- **Marketing & SEO**:
+    - Prepare marketing landing pages describing features and benefits.
+    - Implement basic SEO best practices for discoverability.
+
+## Task Backlog
+- Support more diverse resume formats (e.g., rich text, plain text).
+- Implement advanced NLP for semantic matching and contextual understanding (Nice-to-have).
+- Develop generative AI for suggesting specific bullet points or phrasing (Nice-to-have).
+- Add predictive model for interview call likelihood (Nice-to-have).
+- Personalize career path and skill development recommendations (Nice-to-have).
+- Integrate a resume builder with AI suggestions (Nice-to-have).
+- Integration with job portals for direct application (Nice-to-have).
+- Introduce A/B testing framework for new features.
+- Performance improvements for large resume files.
+- Internationalization (i18n) support.
+- User onboarding tour and in-app guidance.
+- Dark mode toggle for the UI.
+- Browser extension for JD capture.
+- Social media login options.
